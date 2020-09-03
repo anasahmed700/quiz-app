@@ -20,7 +20,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-  console.log(questions)
+  // console.log(questions)
 
   const startQuiz = async () => {
     setLoading(true);
@@ -80,7 +80,7 @@ function App() {
           userAnswer={userAnswers ? userAnswers[number] : undefined}
           callback={checkAnswer}
         /> ) : null }
-        
+
         { !loading && !gameOver && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ? (
         <button className="next" onClick={nextQuestion}>Next</button> ) : null }
       </Wrapper>

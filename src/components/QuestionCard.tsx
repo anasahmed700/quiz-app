@@ -16,8 +16,8 @@ export const QuestionCard: React.FC<Props> = ({question, answers, userAnswer, qu
     <Wrapper>
       <p>Question: {questionNum} / {totalQuestions}</p>
       <p dangerouslySetInnerHTML={{__html: question}} />
-      {answers.map(answer => (
-        <ButtonWrapper
+      {answers.map((answer, index) => (
+        <ButtonWrapper key={index}
           correct = {userAnswer?.correctAnswer === answer}
           userClicked = {userAnswer?.answer === answer}
         >
